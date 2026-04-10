@@ -1,3 +1,5 @@
+let hljs;
+hljs = require('../highlight/index');
 
 function replaceSpacesInText(html) {
     let result = '';
@@ -56,13 +58,10 @@ const config = require('../../config'),
             breaks: true,
         };
 
-
-
         result.highlight = (code, lang, callback) => {
-            let lineLen = code.split(/\r|\n/ig).length
-            let result = code;
+            let lineLen = code.split(/\r|\n/ig).length;
+            let result = hljs.highlightAuto(code).value;
 
-            
             // 代码块多换行的问题
             result = result.replace(/(\r|\n){2,}/g, str => {
                 return new Array(str.length).join("<p>&nbsp;</p>")

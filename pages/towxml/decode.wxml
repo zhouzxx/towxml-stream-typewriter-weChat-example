@@ -32,7 +32,7 @@
   </block>
   <block wx:if="{{item.tag==='image'}}">
     <view class="h2w__imageParent">
-      <image data-data="{{item}}" class="{{item.attrs.class}}" data="{{item.attrs.data}}" id="{{item.attrs.id}}" style="{{item.attrs.style}}" catch:tap="_tap" src="{{item.attrs.src}}" mode="{{item.attrs.mode ? item.attrs.mode : 'widthFix'}}" lazy-load="{{item.attrs['lazy-load']}}">
+      <image data-data="{{item}}" class="{{item.attrs.class}}" data="{{item.attrs.data}}" id="{{item.attrs.id}}" style="{{item.attrs.style}}" catch:tap="_tap" src="{{item.attrs.src}}" mode="{{item.attrs.mode ? item.attrs.mode : 'widthFix'}}" lazy-load="{{item.attr['lazy-load']}}">
         <decode wx:if="{{item.children}}" nodes="{{item}}" />
       </image>
     </view>
